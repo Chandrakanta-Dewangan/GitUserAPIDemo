@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/userListingFragment">
+    <fragment
+        android:id="@+id/userListingFragment"
+        android:name="com.learning.assignment.ui.main.listing.UserListingFragment"
+        android:label="listing_fragment"
+        tools:layout="@layout/listing_fragment">
+        <action
+            android:id="@+id/action_userListingFragment_to_userDetailsFragment"
+            app:destination="@id/userDetailsFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/userDetailsFragment"
+        android:name="com.learning.assignment.ui.main.details.UserDetailsFragment"
+        android:label="UserDetailsFragment"
+        tools:layout="@layout/details_fragment">
+        <argument
+            android:name="user"
+            app:argType="com.learning.domain.model.User" />
+    </fragment>
+</navigation>
